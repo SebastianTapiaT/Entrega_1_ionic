@@ -1,0 +1,64 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="medium">
+    <ion-title>Registra Tu Asistencia</ion-title>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/home']">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item lines="none">
+      <ion-title class="ion-text-center">
+        <h1>Bienvenido!</h1>
+      </ion-title>
+    </ion-item>
+    <ion-item lines="none">
+      Usuario: {{username}}
+    </ion-item>
+    <ion-item lines="none"></ion-item>
+    <ion-item>
+      <ion-input label="Nombre" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Apellido" [(ngModel)]="lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Asignatura" [(ngModel)]="subjet">
+        <ion-select-option value="moviles">Aplicaciones Móviles</ion-select-option>
+        <ion-select-option value="negocios">Inteligencia de Negocios</ion-select-option>
+        <ion-select-option value="estadistica">Estadística</ion-select-option>
+        <ion-select-option value="etica">Ética</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Registra Tu Asistencia" [(ngModel)]="attendance" readonly></ion-input>
+      <ion-button id="btn_popover">
+        <ion-icon name="calendar"></ion-icon>
+      </ion-button>
+      <ion-popover trigger="btn_popover" triggerAction="click">
+        <ng-template>
+          <ion-datetime [(ngModel)]="attendance"></ion-datetime>
+        </ng-template>
+      </ion-popover>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="clean()">Limpiar</ion-button>
+  <ion-button id="btn_alert">Guardar</ion-button>
+  <ion-alert trigger="btn_alert"
+    header="Alumno"
+    subHeader="Datos del Alumno"
+    message="El nombre del Alumno es {{name}} {{lastname}} y se registro exitosamente"
+    [buttons]="alertButtons"
+  >
+  </ion-alert>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="medium">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-footer>

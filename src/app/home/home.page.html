@@ -1,0 +1,39 @@
+<ion-header [translucent]="true" class="ion-text-center ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      <h1>RegistroAPP</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header class="ion-text-center ion-no-border">
+    <ion-toolbar>
+      <ion-title size="large">{{generateMessage()}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-input label="Username" labelPlacement="floating" [(ngModel)]="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" label="Password" labelPlacement="floating" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botón Verde -->
+  <ion-button expand="block" class="btn-green" (click)="validateLogin()">
+    Ingresar
+  </ion-button>
+
+  <!-- Botón Amarillo -->
+  <ion-button expand="full" class="btn-yellow" (click)="recoverPassword()">
+    Recuperar Contraseña
+  </ion-button>
+
+  <!-- Botón Rojo -->
+  <ion-button expand="block" class="btn-red" (click)="scanQR()">
+    Escanear Código QR
+  </ion-button>
+</ion-content>

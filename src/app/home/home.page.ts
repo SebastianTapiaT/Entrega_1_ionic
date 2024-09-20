@@ -21,8 +21,8 @@ export class HomePage {
     private alertController: AlertController // Añadido
   ) {
     this.message = 'Bienvenido!';
-    this.username = 'seba';
-    this.password = '1234';
+    this.username = '';
+    this.password = '';
   }
 
   generateMessage() {
@@ -33,7 +33,7 @@ export class HomePage {
     console.log("Ejecutando validacion PAGE!");
 
     if (this.loginService.validateLogin(this.username, this.password)) {
-      this.showToastMessage('Login exitoso', 'success');
+      this.showToastMessage('Acceso Correcto', 'success');
       const extras: NavigationExtras = {
         state: {
           username: this.username
@@ -42,7 +42,7 @@ export class HomePage {
 
       this.router.navigate(['/index'], extras);
     } else {
-      this.showToastMessage('Login erroneo', 'danger');
+      this.showToastMessage('Acceso Erroneo', 'danger');
     }
   }
 

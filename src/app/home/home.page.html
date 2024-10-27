@@ -1,0 +1,33 @@
+<ion-header [translucent]="true" class="ion-text-center ion-no-border header-custom">
+  <ion-toolbar>
+    <ion-title>
+      <h1>RegistroAPP</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="content-custom">
+  <ion-header class="ion-text-center ion-no-border">
+    <ion-toolbar>
+      <ion-title size="large">{{generateMessage()}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list class="login-list">
+    <ion-item class="custom-input">
+      <ion-input label="Username" labelPlacement="floating" [(ngModel)]="username"></ion-input>
+    </ion-item>
+    <ion-item class="custom-input">
+      <ion-input type="password" label="Password" labelPlacement="floating" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+ 
+  <ion-button expand="block" class="btn-custom btn-green" (click)="validateLogin()">
+    Ingresar
+  </ion-button>
+
+  <ion-button expand="full" class="btn-custom btn-yellow" (click)="recoverPassword()">
+    Recuperar Contraseña
+  </ion-button>
+</ion-content>

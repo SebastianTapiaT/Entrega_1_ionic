@@ -1,0 +1,108 @@
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* Variables de colores personalizados */
+:root {
+  --ion-color-primary: #4a90e2;  /* Azul claro */
+  --ion-color-secondary: #50e3c2; /* Verde suave */
+  --ion-color-tertiary: #f5a623;  /* Amarillo vibrante */
+  --ion-color-dark: #222222;
+  --ion-color-light: #f4f7f9;     /* Fondo claro */
+  --ion-text-color: #333333;      /* Texto principal */
+
+  /* Colores personalizados para los botones */
+  --btn-primary-background: #4a90e2;   /* Azul claro para botones principales */
+  --btn-secondary-background: #50e3c2; /* Verde para botones secundarios */
+  --btn-tertiary-background: #f5a623;  /* Amarillo para botones de alerta o especiales */
+
+  /* Colores para hover en botones */
+  --btn-primary-hover: #3f7dcf;
+  --btn-secondary-hover: #45d7af;
+  --btn-tertiary-hover: #d88c1d;
+
+  /* Color de fondo para las entradas */
+  --input-background-color: #ffffff;
+
+  /* Otros estilos */
+  --border-radius: 12px;  /* Bordes redondeados globales */
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombras sutiles */
+  --transition-speed: 0.3s;
+}
+
+/* Estilos globales para los botones */
+ion-button {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Estilos para botones con color personalizado */
+.btn-green {
+  background-color: var(--btn-secondary-background);
+  color: #fff;
+
+  &:hover {
+    background-color: var(--btn-secondary-hover);
+  }
+}
+
+.btn-yellow {
+  background-color: var(--btn-tertiary-background);
+  color: #fff;
+
+  &:hover {
+    background-color: var(--btn-tertiary-hover);
+  }
+}
+
+/* Estilos para los campos de entrada */
+ion-input {
+  --background: var(--input-background-color);
+  --placeholder-color: var(--ion-text-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 12px;
+  margin-bottom: 15px;
+}
+
+/* Fondo degradado global */
+body {
+  background: linear-gradient(135deg, #4a90e2, #50e3c2);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: var(--ion-color-light); /* Color de fondo de respaldo */
+}
+
+/* Personalización del encabezado */
+ion-header {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+  color: #fff;
+  text-align: center;
+}
+
+/* Ajustes de contenido para mayor legibilidad */
+ion-content {
+  --background: var(--ion-color-light); /* Fondo claro en el contenido */
+  padding: 20px;
+}
